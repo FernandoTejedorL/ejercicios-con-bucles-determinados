@@ -183,9 +183,27 @@ vowelsRepeated('es la chica segoviana');
 /* 12- Crea una función que reciba dos palabras e intercale las letras de cada una para formar una 
 nueva palabra. Si la función recibe (hola, adios) el resultado será "haodliao", pero si recibe 
 (adios, hola) el resultado será "ahdoiloa"  */
+
+const intercalatedLetters = (word12a,word12b) =>{
+    let mixedWord = ('');
+    for (let counter12 = 0; counter12 < Math.max(word12a.length, word12b.length); counter12++){
+        mixedWord+=word12a.charAt(counter12)+word12b.charAt(counter12);
+    }
+    console.log(mixedWord);
+}
+intercalatedLetters('hola','adios');
     
 /* 13- Crea una función que reciba una palabra e imprima la misma palabra en orden inverso 
 conservando las mayúsculas y las minúsculas. Si recibe "Mariposas" deberá imprimir "sasopiraM"*/
+
+const reverseWord = (word13) => {
+    let reverseLetters = ('');
+    for (let counter13 = word13.length ; counter13 >= 0 ; counter13--){
+        reverseLetters+=word13.charAt(counter13);
+    }
+    console.log(reverseLetters);
+}
+reverseWord('Mariposa');
 
 /* 14- Crea una función que reciba un array con 5 palabras, debes imprimir por consola un array que 
 contenga la inicial y la última letra de cada palabra en mayúsculas, es decir, si nuestra función 
