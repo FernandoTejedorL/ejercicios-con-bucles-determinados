@@ -196,7 +196,7 @@ nueva palabra. Si la función recibe (hola, adios) el resultado será "haodliao"
 
 const intercalatedLetters = (word12a,word12b) =>{
     let mixedWord = ('');
-    for (let counter12 = 0; counter12 < Math.max(word12a.length, word12b.length); counter12++){
+    for (let counter12 = 0; counter12 < Math.min(word12a.length, word12b.length); counter12++){
         mixedWord+=word12a.charAt(counter12)+word12b.charAt(counter12);
     }
     console.log(mixedWord);
