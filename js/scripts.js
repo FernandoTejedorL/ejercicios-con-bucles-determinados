@@ -88,7 +88,7 @@ evenInside(0, 15)
 la función debe decir qué valores se han repetido en los dos arrays.  */
 
 const arraySingle = () => {
-    const arrayTo = [];
+    let arrayTo = [];
          for (let counter7 = 0; counter7 < 5; counter7++){
         let randomArrayNumA = Math.floor(Math.random() * 10);
         arrayTo.push(randomArrayNumA);
@@ -98,20 +98,34 @@ const arraySingle = () => {
 const arrayTo1 = arraySingle();
 const arrayTo2 = arraySingle();
 const arrayDoubleComparison = () => {
+    let positions = []
     for (let counter7b = 0; counter7b < 5; counter7b++) {
         if (arrayTo1.includes(arrayTo2[counter7b])) {
+            positions.push(arrayTo2[counter7b])
         }
-        console.log(`El array 1 [${arrayTo1}] incluye el valor ${arrayTo2[counter7b]} 
-            del array 2 [${arrayTo2}]`)
     }
+    console.log(`El array 1 es ${arrayTo1}`);
+    console.log(`El array 2 es ${arrayTo2}`);
+    console.log( `Los valores repetidos son ${positions}`)
 }
-
 arrayDoubleComparison()
-
     
 /* 8- Crea una función que reciba un número y te diga si es primo o no. Un número 
 primo es aquel que sólo puede dividirse por si mismo  */
 
+const primeNumber = number8 =>{
+    let isPrime = 0;
+    for (let counter8 = 1 ; counter8 <= number8 ; counter8++){
+            if (number8 % counter8 === 0){
+            isPrime++
+        }    
+    } if (isPrime === 2) {
+        console.log(`El número ${number8} es un número primo`)
+    } else {
+        console.log(`El número ${number8} no es un número primo`)
+    }
+}
+primeNumber(11);
     
 /* 9- Crea una función que reciba un array de 10 números, imprime por consola cada número, 
 su cuadrado y su cubo en este formato: "Número: 2 \- Cuadrado: 4 \- Cubo: 8". Nota: 
