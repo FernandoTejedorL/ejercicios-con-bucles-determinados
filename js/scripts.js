@@ -132,10 +132,7 @@ vocales en mayúscula.  */
 const vowelsToLower = word10 => {
     let newWord10 = ('')
     for (let counter10 = 0; counter10 < word10.length; counter10++){
-        if (word10.charAt(counter10) === 'a' || word10.charAt(counter10) === 'e' || word10.charAt(counter10) === 'i'
-            || word10.charAt(counter10) === 'o' || word10.charAt(counter10) === 'u' || word10.charAt(counter10) === 'A' ||
-            word10.charAt(counter10) === 'E' || word10.charAt(counter10) === 'I'
-            || word10.charAt(counter10) === 'O' || word10.charAt(counter10) === 'U') {
+        if ('aeiouAEIOU'.includes(word10.charAt(counter10))) {
             newWord10 += word10.charAt(counter10).toLowerCase();
         } else {
             newWord10 += word10.charAt(counter10);
@@ -143,9 +140,8 @@ const vowelsToLower = word10 => {
     }
     return newWord10
 }
-const result10 = vowelsToLower('CEBOLLA')
+const result10 = vowelsToLower('CANTIMPLORA')
 console.log(result10)
-
 
     
 /* 11- Crea una función que reciba una frase e imprima el número de veces que se repite cada vocal, 
@@ -209,3 +205,13 @@ reverseWord('Mariposa');
 contenga la inicial y la última letra de cada palabra en mayúsculas, es decir, si nuestra función 
 recibiera un array con \['hola', 'adios', 'gato', 'perro', 'casa'\] deberá imprimir por 
 consola \['H', 'A', 'A', 'S', 'G', 'O', 'P','O', 'C', 'A'\]*/
+
+const fiveToLetters = array14 => {
+    let newArray14 = [];
+    for (let counter14 = 0 ; counter14 < array14.length ; counter14++){
+        let lastChar = array14[counter14].charAt(array14[counter14].length-1).toUpperCase(); 
+        newArray14.push(array14[counter14].charAt(0).toUpperCase(), lastChar);
+    }
+    console.log(newArray14);
+}
+fiveToLetters(['hola', 'adios', 'gato', 'perro', 'casa']);
