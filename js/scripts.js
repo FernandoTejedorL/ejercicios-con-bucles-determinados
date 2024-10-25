@@ -87,20 +87,27 @@ evenInside(0, 15)
 /* 7- Crea una función que genere 2 arrays y los rellene con 5 números aleatorios cada uno, 
 la función debe decir qué valores se han repetido en los dos arrays.  */
 
-const repeatedWithin = () => {
-    const array7a = [];
-    const array7b = [];
-     for (let counter7 = 0; counter7 < 5; counter7++){
+const arraySingle = () => {
+    const arrayTo = [];
+         for (let counter7 = 0; counter7 < 5; counter7++){
         let randomArrayNumA = Math.floor(Math.random() * 10);
-        let randomArrayNumB = Math.floor(Math.random() * 10);
-        array7a.push(randomArrayNumA);
-        array7b.push(randomArrayNumB);
+        arrayTo.push(randomArrayNumA);
     }
-    return [array7a, array7b];
-    
+    return arrayTo;  
 }
-const result7 = repeatedWithin()
-console.log(result7)
+const arrayTo1 = arraySingle();
+const arrayTo2 = arraySingle();
+const arrayDoubleComparison = () => {
+    for (let counter7b = 0; counter7b < 5; counter7b++) {
+        if (arrayTo1.includes(arrayTo2[counter7b])) {
+        }
+        console.log(`El array 1 [${arrayTo1}] incluye el valor ${arrayTo2[counter7b]} 
+            del array 2 [${arrayTo2}]`)
+    }
+}
+
+arrayDoubleComparison()
+
     
 /* 8- Crea una función que reciba un número y te diga si es primo o no. Un número 
 primo es aquel que sólo puede dividirse por si mismo  */
@@ -109,13 +116,69 @@ primo es aquel que sólo puede dividirse por si mismo  */
 /* 9- Crea una función que reciba un array de 10 números, imprime por consola cada número, 
 su cuadrado y su cubo en este formato: "Número: 2 \- Cuadrado: 4 \- Cubo: 8". Nota: 
 Dentro del objeto Math existe el método pow. Math.pow(número, exponente)  */
+
+const powArray = array9 => {
+    for (const number of array9){
+        console.log(`Número: ${number}`);
+        console.log(`Cuadrado: ${Math.pow(number, 2)}`);
+        console.log(`Cubo: ${Math.pow(number, 3)}`);        
+    }
+}
+powArray ([1,2,3,4,5,6,7,8,9,10])
     
 /* 10- Crea una función que reciba una palabra e imprima por consola esa palabra pero con las 
 vocales en mayúscula.  */
+
+const vowelsToLower = word10 => {
+    let newWord10 = ('')
+    for (let counter10 = 0; counter10 < word10.length; counter10++){
+        if (word10.charAt(counter10) === 'a' || word10.charAt(counter10) === 'e' || word10.charAt(counter10) === 'i'
+            || word10.charAt(counter10) === 'o' || word10.charAt(counter10) === 'u' || word10.charAt(counter10) === 'A' ||
+            word10.charAt(counter10) === 'E' || word10.charAt(counter10) === 'I'
+            || word10.charAt(counter10) === 'O' || word10.charAt(counter10) === 'U') {
+            newWord10 += word10.charAt(counter10).toLowerCase();
+        } else {
+            newWord10 += word10.charAt(counter10);
+           }
+    }
+    return newWord10
+}
+const result10 = vowelsToLower('CEBOLLA')
+console.log(result10)
+
+
     
 /* 11- Crea una función que reciba una frase e imprima el número de veces que se repite cada vocal, 
 por ejemplo para la frase "Enrique ordeña cabras", el resultado por consola debe 
 ser: a: 3, e: 3, i: 1, o: 1, u: 1  */
+
+const vowelsRepeated = (sentence) => {
+    let aCounter = 0;
+    let eCounter = 0;
+    let iCounter = 0;
+    let oCounter = 0;
+    let uCounter = 0;
+    for (let counter11 = 0; counter11 < sentence.length; counter11++) {
+           if (sentence.charAt(counter11).includes('a')) {
+            aCounter += 1;
+        } else if (sentence.charAt(counter11).includes('e')) {
+            eCounter += 1;
+        } else if (sentence.charAt(counter11).includes('i')) {
+            iCounter += 1;
+        } else if (sentence.charAt(counter11).includes('o')) {
+            oCounter += 1;
+        } else if (sentence.charAt(counter11).includes('u')) {
+            uCounter += 1;
+        }
+    }
+    console.log(`a: ${aCounter}`)
+    console.log(`e: ${eCounter}`)
+    console.log(`i: ${iCounter}`)
+    console.log(`o: ${oCounter}`)
+    console.log(`u: ${uCounter}`)
+}
+
+vowelsRepeated('es la chica segoviana');
     
 /* 12- Crea una función que reciba dos palabras e intercale las letras de cada una para formar una 
 nueva palabra. Si la función recibe (hola, adios) el resultado será "haodliao", pero si recibe 
